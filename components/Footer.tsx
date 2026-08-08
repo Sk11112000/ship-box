@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Package, MapPin, Phone, Mail, ShieldCheck, Heart } from "lucide-react";
 
 export default function Footer() {
@@ -18,8 +19,13 @@ export default function Footer() {
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo("hero")}>
-              <div className="w-10 h-10 bg-amber-600 rounded-xl flex items-center justify-center text-white shadow-md">
-                <Package className="w-5 h-5" />
+              <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-md border border-amber-500/30 shrink-0">
+                <Image
+                  src="/images/krishna_packaging_logo.png"
+                  alt="Krishna Packaging Logo"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div>
                 <span className="text-xl font-black text-white tracking-tight">

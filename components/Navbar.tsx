@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Package, Phone, Mail, MapPin, Menu, X, ChevronRight, Calculator, ShieldCheck } from "lucide-react";
 
 interface NavbarProps {
@@ -51,12 +52,17 @@ export default function Navbar({ onOpenCalculator, onOpenQuoteModal }: NavbarPro
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo("hero")}>
-            <div className="w-11 h-11 bg-gradient-to-br from-amber-500 to-amber-700 rounded-xl flex items-center justify-center text-white shadow-md shadow-amber-600/20 border border-amber-400/30">
-              <Package className="w-6 h-6 stroke-[2.2]" />
+            <div className="relative w-11 h-11 rounded-xl overflow-hidden shadow-md border border-amber-500/30 shrink-0">
+              <Image
+                src="/images/krishna_packaging_logo.png"
+                alt="Krishna Packaging Logo"
+                fill
+                className="object-cover"
+              />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="text-2xl font-black tracking-tight text-slate-900 font-sans">
+                <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 font-sans">
                   KRISHNA<span className="text-amber-600"> PACKAGING</span>
                 </span>
                 <span className="bg-amber-100 text-amber-800 text-[10px] font-extrabold px-1.5 py-0.5 rounded tracking-wider uppercase">
