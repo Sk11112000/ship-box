@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { X, Send, CheckCircle2, Package, Sparkles } from "lucide-react";
+import { X, Send, CheckCircle2, Package, Sparkles, Loader2, MessageSquare } from "lucide-react";
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -10,6 +10,7 @@ interface QuoteModalProps {
 }
 
 export default function QuoteModal({ isOpen, onClose, initialSpec }: QuoteModalProps) {
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -21,10 +22,33 @@ export default function QuoteModal({ isOpen, onClose, initialSpec }: QuoteModalP
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+
+    try {
+      await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          company: formData.company,
+          boxSpec: formData.boxSpec,
+          quantity: formData.qty,
+        }),
+      });
+    } catch (err) {
+      console.error("Error sending quote email:", err);
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
+    }
   };
+
+  const whatsappMessage = encodeURIComponent(
+    `Hello Krishna Packaging,\nI would like to get a quote for:\n• Product: ${formData.boxSpec}\n• Quantity: ${formData.qty} units\n• Name: ${formData.name}\n• Phone: ${formData.phone}\n• Company: ${formData.company || "N/A"}`
+  );
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm animate-in fade-in duration-200">
@@ -33,7 +57,7 @@ export default function QuoteModal({ isOpen, onClose, initialSpec }: QuoteModalP
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-1.5 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+          className="absolute top-4 right-4 p-1.5 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
@@ -43,19 +67,32 @@ export default function QuoteModal({ isOpen, onClose, initialSpec }: QuoteModalP
             <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-black text-slate-900">Quote Request Submitted!</h3>
-            <p className="text-xs text-slate-600">
-              Our Jaipur factory representative will call you shortly at <span className="font-bold text-amber-800">{formData.phone}</span> with wholesale price sheets and sample options.
+            <h3 className="text-2xl font-black text-slate-900">Quote Email Dispatched!</h3>
+            <p className="text-xs text-slate-600 max-w-md mx-auto">
+              Your quote request has been emailed to <span className="font-bold text-slate-900">krishnapackagingcompany@gmail.com</span> & <span className="font-bold text-slate-900">shubhamindustries124@gmail.com</span>. Our team will contact you shortly at <span className="font-bold text-amber-800">{formData.phone}</span>.
             </p>
-            <button
-              onClick={() => {
-                setSubmitted(false);
-                onClose();
-              }}
-              className="px-6 py-2.5 rounded-xl bg-amber-600 text-white font-bold text-xs"
-            >
-              Done & Close
-            </button>
+
+            <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href={`https://wa.me/917891013141?text=${whatsappMessage}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md"
+              >
+                <MessageSquare className="w-4 h-4" />
+                Also Send via WhatsApp (+91 78910 13141)
+              </a>
+
+              <button
+                onClick={() => {
+                  setSubmitted(false);
+                  onClose();
+                }}
+                className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 text-white font-bold text-xs cursor-pointer"
+              >
+                Done & Close
+              </button>
+            </div>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -125,10 +162,20 @@ export default function QuoteModal({ isOpen, onClose, initialSpec }: QuoteModalP
 
             <button
               type="submit"
-              className="w-full py-3.5 px-4 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-extrabold text-xs shadow-md flex items-center justify-center gap-2 transition-all"
+              disabled={submitting}
+              className="w-full py-3.5 px-4 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-extrabold text-xs shadow-md flex items-center justify-center gap-2 transition-all cursor-pointer disabled:opacity-75"
             >
-              <Send className="w-4 h-4" />
-              Send Quote Request to Jaipur Office
+              {submitting ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  Sending Quote Email...
+                </>
+              ) : (
+                <>
+                  <Send className="w-4 h-4" />
+                  Send Quote Request to Email & Jaipur Office
+                </>
+              )}
             </button>
           </form>
         )}

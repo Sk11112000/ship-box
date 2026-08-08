@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useId } from "react";
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, Factory, MessageSquare } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, Factory, MessageSquare, Loader2 } from "lucide-react";
 
 interface ContactSectionProps {
   prefilledBoxSpec?: string;
@@ -18,6 +18,7 @@ export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps
   const quantityId = useId();
   const detailsId = useId();
 
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -30,9 +31,31 @@ export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps
     details: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+
+    try {
+      await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          company: formData.company,
+          location: formData.location,
+          boxSpec: formData.boxType,
+          quantity: formData.quantity,
+          details: formData.details,
+        }),
+      });
+    } catch (err) {
+      console.error("Error submitting quote contact form:", err);
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   return (
@@ -276,10 +299,20 @@ export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps
 
                 <button
                   type="submit"
-                  className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-extrabold text-sm shadow-lg shadow-amber-600/30 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5"
+                  disabled={submitting}
+                  className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-extrabold text-sm shadow-lg shadow-amber-600/30 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5 cursor-pointer disabled:opacity-75"
                 >
-                  <Send className="w-4 h-4" />
-                  Submit Inquiry to Jaipur Factory Sales
+                  {submitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Sending Quote Email...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      Submit Inquiry & Send Quote Email
+                    </>
+                  )}
                 </button>
               </form>
             )}
