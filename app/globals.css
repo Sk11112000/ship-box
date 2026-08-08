@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf8f5;
+  --foreground: #0f172a;
+  --kraft-amber: #d97706;
+  --kraft-dark: #92400e;
+  --kraft-light: #fef3c7;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
 }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1ebd9;
+}
+::-webkit-scrollbar-thumb {
+  background: #d97706;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b45309;
+}
+
+/* Subtle cardboard texture background utility */
+.bg-kraft-texture {
+  background-color: #f7f2e7;
+  background-image: radial-gradient(#d97706 0.65px, transparent 0.65px), radial-gradient(#b45309 0.65px, #f7f2e7 0.65px);
+  background-size: 26px 26px;
+  background-position: 0 0, 13px 13px;
+  opacity: 0.95;
+}
+
+.bg-industrial-dark {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.box-shadow-cardboard {
+  box-shadow: 0 10px 30px -10px rgba(180, 83, 9, 0.15), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 4s ease-in-out infinite;
+}
+
