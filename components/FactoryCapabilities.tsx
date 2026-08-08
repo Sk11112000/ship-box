@@ -17,14 +17,25 @@ export default function FactoryCapabilities() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-1.5 bg-amber-500/20 text-amber-300 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3 border border-amber-500/30">
-            <Factory className="w-4 h-4 text-amber-400" /> Jaipur Manufacturing Plant & Infrastructure
+            <Factory className="w-4 h-4 text-amber-400" /> Est. 1989 • 35+ Years Packaging Excellence
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            High-Precision <span className="text-amber-400">Corrugation Technology</span> & Quality Lab
+            About <span className="text-amber-400">Krishna Packaging & Shubham Industries</span>
           </h2>
-          <p className="mt-3 text-slate-300 text-base">
-            Located in Vishwakarma Industrial Area (VKI Jaipur), our 45,000 sq. ft. automated plant manufactures world-class corrugated boxes certified to international export standards.
-          </p>
+          <div className="mt-4 text-slate-300 text-sm sm:text-base space-y-3 font-normal leading-relaxed text-left sm:text-center max-w-3xl mx-auto bg-slate-800/50 p-6 rounded-2xl border border-slate-700/80">
+            <p>
+              <strong>Established in 1989</strong>, we are a leading and trusted manufacturer of high-quality corrugated and cardboard boxes in Jaipur. With over <strong>35 years of rich industry experience</strong>, we have built a strong legacy of delivering durable, reliable, and cost-effective packaging solutions to a diverse range of businesses.
+            </p>
+            <p>
+              Over the past three decades, we have continuously upgraded our manufacturing processes to meet modern packaging demands. From standard shipping cartons to custom-designed die-cut boxes, offset printing, and binding cloth reinforcement, we ensure that every box we produce offers maximum strength and protection.
+            </p>
+            <p className="text-amber-300 font-medium">
+              Our core philosophy revolves around uncompromising quality, timely delivery, and complete customer satisfaction. When you choose us, you are partnering with decades of packaging expertise.
+            </p>
+            <p className="text-xs text-slate-400 pt-2 border-t border-slate-700/60">
+              📍 <strong>Factory Location:</strong> B-10, Opp. RAC Gate, Nagtali Transport Nagar, Delhi Road, Jaipur - 302004
+            </p>
+          </div>
         </div>
         {/* 4 Feature Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">

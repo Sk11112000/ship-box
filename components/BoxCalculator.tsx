@@ -40,6 +40,9 @@ export default function BoxCalculator({ onOpenQuoteModal }: BoxCalculatorProps) 
   if (ply === "3ply") baseRatePerSqFt = 16;
   else if (ply === "5ply") baseRatePerSqFt = 26;
   else if (ply === "7ply") baseRatePerSqFt = 42;
+  else if (ply === "9ply") baseRatePerSqFt = 58;
+  else if (ply === "11ply") baseRatePerSqFt = 74;
+  else if (ply === "13ply") baseRatePerSqFt = 92;
 
   // Paper grade adjustment
   if (paperGrade === "180gsm") baseRatePerSqFt *= 1.15;
@@ -83,7 +86,13 @@ export default function BoxCalculator({ onOpenQuoteModal }: BoxCalculatorProps) 
     else if (paperGrade === "180gsm") { bfRating = "26 - 30 BF"; loadCapacity = "35 - 50 kg"; ectRating = "55 ECT"; }
     else { bfRating = "32 - 36 BF"; loadCapacity = "50 - 65 kg"; ectRating = "65 ECT"; }
   } else if (ply === "7ply") {
-    bfRating = "36 - 42 BF"; loadCapacity = "70 - 120 kg (Heavy Industrial)"; ectRating = "80+ ECT";
+    bfRating = "36 - 42 BF"; loadCapacity = "70 - 120 kg"; ectRating = "80+ ECT";
+  } else if (ply === "9ply") {
+    bfRating = "45 - 52 BF"; loadCapacity = "120 - 250 kg"; ectRating = "100+ ECT";
+  } else if (ply === "11ply") {
+    bfRating = "52 - 60 BF"; loadCapacity = "250 - 450 kg"; ectRating = "120+ ECT";
+  } else if (ply === "13ply") {
+    bfRating = "60+ Industrial BF"; loadCapacity = "450 - 800+ kg (Ultra Heavy Industrial)"; ectRating = "150+ ECT";
   }
 
   const handleRequestQuoteWithSpecs = () => {
@@ -149,17 +158,20 @@ export default function BoxCalculator({ onOpenQuoteModal }: BoxCalculatorProps) 
               <label htmlFor={plyFluteId} className="block text-xs font-extrabold text-slate-800 uppercase tracking-wider mb-2 flex items-center gap-1.5">
                 <Layers className="w-4 h-4 text-amber-600" /> Corrugation Flute & Wall Ply
               </label>
-              <div id={plyFluteId} className="grid grid-cols-3 gap-2.5">
+              <div id={plyFluteId} className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                 {[
                   { id: "3ply", label: "3-Ply Single Wall", detail: "E / B Flute (Light - Med)" },
                   { id: "5ply", label: "5-Ply Double Wall", detail: "BC Flute (High Strength)" },
-                  { id: "7ply", label: "7-Ply Heavy Duty", detail: "Triple Wall (Heavy Duty)" },
+                  { id: "7ply", label: "7-Ply Heavy Duty", detail: "Triple Wall Export" },
+                  { id: "9ply", label: "9-Ply Quad Wall", detail: "Multi-Wall Heavy" },
+                  { id: "11ply", label: "11-Ply Extra Strong", detail: "Industrial Multi-Wall" },
+                  { id: "13ply", label: "13-Ply Ultra Heavy", detail: "Max Strength Crate" },
                 ].map((p) => (
                   <button
                     key={p.id}
                     type="button"
                     onClick={() => setPly(p.id)}
-                    className={`p-3 rounded-xl text-center border transition-all ${
+                    className={`p-3 rounded-xl text-center border transition-all cursor-pointer ${
                       ply === p.id
                         ? "border-amber-600 bg-amber-50 text-amber-950 font-bold ring-2 ring-amber-500/20"
                         : "border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 font-medium"

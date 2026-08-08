@@ -8,6 +8,7 @@ interface ContactSectionProps {
 }
 
 export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps) {
+
   const nameId = useId();
   const phoneId = useId();
   const emailId = useId();
@@ -36,12 +37,12 @@ export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps
 
   return (
     <section id="contact" className="py-20 bg-slate-900 text-white relative overflow-hidden">
-      
+
       {/* Background Glow */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-1.5 bg-amber-500/20 text-amber-300 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3 border border-amber-500/30">
@@ -56,7 +57,7 @@ export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
+
           {/* Left Contact Info & Map Card */}
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-slate-800/90 p-7 rounded-2xl border border-slate-700 space-y-6 shadow-xl">
@@ -70,11 +71,10 @@ export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-white uppercase tracking-wider">Manufacturing Unit</h4>
+                    <h4 className="font-extrabold text-white uppercase tracking-wider">Factory & Registered Office</h4>
                     <p className="text-slate-300 leading-relaxed mt-0.5">
-                      Plot No. 142-145, Road No. 9,<br />
-                      Vishwakarma Industrial Area (VKI Area),<br />
-                      Jaipur, Rajasthan 302013, India
+                      <strong>Factory:</strong> B-10, Opp. RAC Gate, Nagtali Transport Nagar, Delhi Road, Jaipur - 302004<br />
+                      <strong>Reg. Office:</strong> S-24-25, Janta Colony, Jaipur - 302004, Rajasthan
                     </p>
                   </div>
                 </div>
@@ -84,10 +84,12 @@ export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-white uppercase tracking-wider">Direct Factory Phones</h4>
-                    <p className="text-slate-300 mt-0.5">
-                      Sales Desk: <a href="tel:+911412334890" className="text-amber-300 hover:underline font-bold">+91 141 233 4890</a><br />
-                      WhatsApp / Mobile: <a href="tel:+919829077123" className="text-amber-300 hover:underline font-bold">+91 98290 77123</a>
+                    <h4 className="font-extrabold text-white uppercase tracking-wider">Orders & Enquiries</h4>
+                    <p className="text-slate-300 mt-0.5 space-y-1">
+                      <span>📞 <strong>Orders & WhatsApp:</strong> <a href="https://wa.me/917891013141" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:underline font-bold">+91 78910 13141</a></span><br />
+                      <span>👤 <strong>Krishna Gopal Sharma:</strong> <a href="tel:+919314519097" className="text-amber-300 hover:underline font-bold">+91 93145 19097</a></span><br />
+                      <span>👤 <strong>Aniket Sharma:</strong> <a href="tel:+919829088124" className="text-amber-300 hover:underline font-bold">+91 98290 88124</a></span><br />
+                      <span>☎️ <strong>Landlines:</strong> <a href="tel:+911412610708" className="text-amber-300 hover:underline">+91 141 2610708</a>, <a href="tel:+911412616412" className="text-amber-300 hover:underline">+91 141 2616412</a></span>
                     </p>
                   </div>
                 </div>
@@ -97,10 +99,10 @@ export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-white uppercase tracking-wider">Email Inquiry</h4>
+                    <h4 className="font-extrabold text-white uppercase tracking-wider">Email Addresses</h4>
                     <p className="text-slate-300 mt-0.5">
-                      <a href="mailto:sales@shipboxjaipur.com" className="text-amber-300 hover:underline">sales@shipboxjaipur.com</a><br />
-                      <a href="mailto:info@shipboxjaipur.com" className="text-amber-300 hover:underline">info@shipboxjaipur.com</a>
+                      ✉️ <a href="mailto:krishnapackagingcompany@gmail.com" className="text-amber-300 hover:underline font-medium">krishnapackagingcompany@gmail.com</a><br />
+                      ✉️ <a href="mailto:shubhamindustries124@gmail.com" className="text-amber-300 hover:underline font-medium">shubhamindustries124@gmail.com</a>
                     </p>
                   </div>
                 </div>
@@ -113,7 +115,7 @@ export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps
                     <h4 className="font-extrabold text-white uppercase tracking-wider">Factory Operating Hours</h4>
                     <p className="text-slate-300 mt-0.5">
                       Monday - Saturday: 8:30 AM - 7:30 PM<br />
-                      <span className="text-amber-400 font-semibold">Factory Visits Welcome by Appointment</span>
+                      <span className="text-amber-400 font-semibold">Factory & Office Visits Welcome</span>
                     </p>
                   </div>
                 </div>
@@ -124,10 +126,10 @@ export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps
             {/* Quick Transport Directions */}
             <div className="bg-amber-500/10 border border-amber-500/30 p-5 rounded-2xl text-xs text-amber-200 space-y-1.5">
               <h4 className="font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
-                <Factory className="w-4 h-4" /> Transport & Delivery Reach
+                <Factory className="w-4 h-4" /> Transport & Logistics Reach
               </h4>
               <p className="leading-relaxed text-slate-300">
-                Direct fleet delivery to VKIA, Sitapura, Mansarovar, Bagru, Jhotwara, Transport Nagar, & Jaipur Railway Station / Airport cargo terminals within 24 hours.
+                Direct fleet & cargo delivery from Delhi Bypass Road / Transport Nagar plant to Janta Colony, Sitapura, VKIA, Sanganer, Bagru, Jhotwara & all Rajasthan export hubs.
               </p>
             </div>
           </div>

@@ -65,7 +65,7 @@ export default function QuoteModal({ isOpen, onClose, initialSpec }: QuoteModalP
               </div>
               <div>
                 <h3 className="text-lg font-black text-slate-900">Request Factory Quotation</h3>
-                <p className="text-[11px] text-slate-500">ShipBox Cardboard & Packaging Works • VKI Jaipur</p>
+                <p className="text-[11px] text-slate-500">Krishna Packaging Co. & Shubham Industries • Jaipur (Est. 1989)</p>
               </div>
             </div>
 

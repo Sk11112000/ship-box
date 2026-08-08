@@ -26,21 +26,21 @@ export default function Navbar({ onOpenCalculator, onOpenQuoteModal }: NavbarPro
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-3 flex-wrap justify-center md:justify-start">
             <span className="inline-flex items-center gap-1.5 bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-semibold text-[11px] border border-amber-500/30">
-              <MapPin className="w-3 h-3 text-amber-400" /> VKI Area, Jaipur, Rajasthan
+              <MapPin className="w-3 h-3 text-amber-400" /> Nagtali, Transport Nagar, Delhi Road, Jaipur
             </span>
             <span className="hidden sm:inline-block text-slate-400">|</span>
             <span className="hidden sm:inline flex items-center gap-1 text-slate-300">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> ISO 9001:2015 & FSC Certified Factory
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> Est. 1989 • 35+ Years Packaging Excellence
             </span>
           </div>
 
           <div className="flex items-center gap-4 text-slate-200">
-            <a href="tel:+919829077123" className="flex items-center gap-1 hover:text-amber-400 transition-colors">
-              <Phone className="w-3 h-3 text-amber-400" /> +91 98290 77123
+            <a href="https://wa.me/917891013141" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-amber-400 transition-colors font-semibold">
+              <Phone className="w-3 h-3 text-amber-400" /> +91 78910 13141
             </a>
             <span className="text-slate-600">|</span>
-            <a href="mailto:info@shipboxjaipur.com" className="flex items-center gap-1 hover:text-amber-400 transition-colors">
-              <Mail className="w-3 h-3 text-amber-400" /> info@shipboxjaipur.com
+            <a href="mailto:krishnapackagingcompany@gmail.com" className="flex items-center gap-1 hover:text-amber-400 transition-colors">
+              <Mail className="w-3 h-3 text-amber-400" /> krishnapackagingcompany@gmail.com
             </a>
           </div>
         </div>
@@ -57,14 +57,14 @@ export default function Navbar({ onOpenCalculator, onOpenQuoteModal }: NavbarPro
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="text-2xl font-black tracking-tight text-slate-900 font-sans">
-                  SHIP<span className="text-amber-600">BOX</span>
+                  KRISHNA<span className="text-amber-600"> PACKAGING</span>
                 </span>
                 <span className="bg-amber-100 text-amber-800 text-[10px] font-extrabold px-1.5 py-0.5 rounded tracking-wider uppercase">
-                  JAIPUR
+                  EST. 1989
                 </span>
               </div>
               <p className="text-[11px] text-slate-500 font-medium tracking-wide">
-                Cardboard & Corrugated Box Works
+                Krishna Packaging Co. & Shubham Industries • Jaipur
               </p>
             </div>
           </div>

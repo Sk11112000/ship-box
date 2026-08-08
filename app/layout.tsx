@@ -13,16 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ShipBox Jaipur | Cardboard & Corrugated Box Manufacturing Co.",
-  description: "Jaipur's premier cardboard packaging manufacturer. Heavy-duty corrugated boxes, custom printed kraft shipping cartons, die-cut boxes, & eco-friendly packaging solutions for Jaipur exporters and industries.",
+  title: "Krishna Packaging Co. & Shubham Industries | Corrugated Box Manufacturer Jaipur (Est. 1989)",
+  description: "Established in 1989. Leading manufacturer of 3-ply to 13-ply corrugated boxes, custom die-cut packaging, offset printed boxes, binding cloth boxes, corrugated rolls, sheets & kraft paper in Jaipur.",
   keywords: [
-    "Cardboard manufacturer Jaipur",
+    "Krishna Packaging Company Jaipur",
+    "Shubham Industries Jaipur",
     "Corrugated box manufacturer Jaipur",
-    "VKI Industrial area box packaging",
-    "Kraft paper boxes Jaipur",
-    "Die cut box supplier Rajasthan",
-    "ShipBox Jaipur packaging",
-    "Custom shipping cartons Jaipur"
+    "Cardboard manufacturer Jaipur",
+    "Nagtali Transport Nagar Delhi Road Jaipur",
+    "Multi-layer 3-ply to 13-ply corrugated boxes",
+    "Custom die cut boxes Jaipur",
+    "Offset printed boxes Jaipur",
+    "Boxes with binding cloth Jaipur",
+    "Corrugated rolls and sheets Jaipur"
   ],
 };
 

@@ -22,34 +22,35 @@ export default function Footer() {
                 <Package className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-2xl font-black text-white tracking-tight">
-                  SHIP<span className="text-amber-500">BOX</span>
+                <span className="text-xl font-black text-white tracking-tight">
+                  KRISHNA<span className="text-amber-500"> PACKAGING</span>
                 </span>
                 <span className="ml-2 bg-amber-500/20 text-amber-300 text-[10px] font-bold px-1.5 py-0.5 rounded border border-amber-500/30">
-                  JAIPUR
+                  EST. 1989
                 </span>
               </div>
             </div>
 
             <p className="text-slate-400 leading-relaxed font-normal max-w-sm">
-              Jaipur&apos;s leading corrugated cardboard box manufacturing facility. Specializing in heavy-duty 3-ply, 5-ply, 7-ply shipping cartons, die-cut packaging & custom flexo printing for Rajasthan exporters.
+              Krishna Packaging Co. & Shubham Industries. Established in 1989, we are Jaipur&apos;s trusted manufacturer of 3-ply to 13-ply corrugated boxes, custom die-cut packaging, offset printed boxes, binding cloth reinforcement & packaging materials.
             </p>
 
             <div className="flex items-center gap-3 text-slate-300 font-semibold pt-2">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>ISO 9001:2015 Certified • FSC Recyclable Paper</span>
+              <span>Est. 1989 • 35+ Years Packaging Legacy</span>
             </div>
           </div>
 
           {/* Col 2: Box Types */}
           <div className="space-y-3">
-            <h4 className="text-white font-extrabold uppercase tracking-wider text-xs">Cardboard Box Types</h4>
+            <h4 className="text-white font-extrabold uppercase tracking-wider text-xs">Products & Services</h4>
             <ul className="space-y-2">
-              <li><button onClick={() => scrollTo("products")} className="hover:text-amber-400 transition-colors">RSC Shipping Cartons</button></li>
-              <li><button onClick={() => scrollTo("products")} className="hover:text-amber-400 transition-colors">Die-Cut Self Locking Mailers</button></li>
-              <li><button onClick={() => scrollTo("products")} className="hover:text-amber-400 transition-colors">Partitioned Fragile Cartons</button></li>
-              <li><button onClick={() => scrollTo("products")} className="hover:text-amber-400 transition-colors">7-Ply Heavy Duty Master Boxes</button></li>
-              <li><button onClick={() => scrollTo("products")} className="hover:text-amber-400 transition-colors">Corrugated Rolls & Corner Guards</button></li>
+              <li><button onClick={() => scrollTo("products")} className="hover:text-amber-400 transition-colors">3-Ply to 13-Ply Boxes</button></li>
+              <li><button onClick={() => scrollTo("products")} className="hover:text-amber-400 transition-colors">Custom Die-Cut Boxes</button></li>
+              <li><button onClick={() => scrollTo("products")} className="hover:text-amber-400 transition-colors">Offset Printed Boxes</button></li>
+              <li><button onClick={() => scrollTo("products")} className="hover:text-amber-400 transition-colors">Boxes with Binding Cloth</button></li>
+              <li><button onClick={() => scrollTo("products")} className="hover:text-amber-400 transition-colors">Corrugated Rolls & Sheets</button></li>
+              <li><button onClick={() => scrollTo("products")} className="hover:text-amber-400 transition-colors">High-Strength Kraft Paper</button></li>
             </ul>
           </div>
 
@@ -59,25 +60,24 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><button onClick={() => scrollTo("jaipur-industries")} className="hover:text-amber-400 transition-colors">Blue Pottery & Marble Crafts</button></li>
               <li><button onClick={() => scrollTo("jaipur-industries")} className="hover:text-amber-400 transition-colors">Sanganeri Textile Cartons</button></li>
-              <li><button onClick={() => scrollTo("jaipur-industries")} className="hover:text-amber-400 transition-colors">Johri Bazaar Jewellery Mailers</button></li>
-              <li><button onClick={() => scrollTo("jaipur-industries")} className="hover:text-amber-400 transition-colors">VKI Heavy Machinery Crates</button></li>
-              <li><button onClick={() => scrollTo("jaipur-industries")} className="hover:text-amber-400 transition-colors">Jaipur D2C & Amazon Sellers</button></li>
+              <li><button onClick={() => scrollTo("jaipur-industries")} className="hover:text-amber-400 transition-colors">Heavy Machinery Packaging</button></li>
+              <li><button onClick={() => scrollTo("jaipur-industries")} className="hover:text-amber-400 transition-colors">Export Sea Freight Boxes</button></li>
+              <li><button onClick={() => scrollTo("jaipur-industries")} className="hover:text-amber-400 transition-colors">Jaipur D2C & Bulk Cartons</button></li>
             </ul>
           </div>
 
           {/* Col 4: Factory Address */}
           <div className="space-y-3">
-            <h4 className="text-white font-extrabold uppercase tracking-wider text-xs">Jaipur Factory Unit</h4>
+            <h4 className="text-white font-extrabold uppercase tracking-wider text-xs">Factory & Office</h4>
             <p className="text-slate-300 leading-relaxed">
-              Plot 142-145, Road No. 9,<br />
-              Vishwakarma Industrial Area (VKI),<br />
-              Jaipur, Rajasthan 302013, India
+              <strong>Factory:</strong> B-10, Opp. RAC Gate, Nagtali Transport Nagar, Delhi Road, Jaipur - 302004<br />
+              <strong>Reg. Office:</strong> S-24-25, Janta Colony, Jaipur - 302004
             </p>
             <p className="text-slate-300 pt-1">
-              Phone: <a href="tel:+919829077123" className="text-amber-400 font-bold hover:underline">+91 98290 77123</a>
+              Orders/WhatsApp: <a href="https://wa.me/917891013141" target="_blank" rel="noopener noreferrer" className="text-amber-400 font-bold hover:underline">+91 78910 13141</a>
             </p>
             <p className="text-slate-300">
-              Email: <a href="mailto:info@shipboxjaipur.com" className="text-amber-400 hover:underline">info@shipboxjaipur.com</a>
+              Email: <a href="mailto:krishnapackagingcompany@gmail.com" className="text-amber-400 hover:underline">krishnapackagingcompany@gmail.com</a>
             </p>
           </div>
 
@@ -85,9 +85,9 @@ export default function Footer() {
 
         {/* Bottom copyright line */}
         <div className="mt-12 pt-8 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-500">
-          <p>© {new Date().getFullYear()} ShipBox Packaging Co. (Jaipur, Rajasthan). All Rights Reserved.</p>
+          <p>© 1989 - {new Date().getFullYear()} Krishna Packaging Co. & Shubham Industries (Jaipur, Rajasthan). All Rights Reserved.</p>
           <p className="flex items-center gap-1">
-            Engineered with <Heart className="w-3 h-3 text-amber-500 fill-amber-500" /> for Jaipur Industry & Exporters
+            Manufactured with <Heart className="w-3 h-3 text-amber-500 fill-amber-500" /> for Jaipur & Global Exporters
           </p>
         </div>
       </div>
