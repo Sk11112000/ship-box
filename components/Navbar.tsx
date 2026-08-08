@@ -65,13 +65,7 @@ export default function Navbar({ onOpenCalculator, onOpenQuoteModal }: NavbarPro
                 <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 font-sans">
                   KRISHNA<span className="text-amber-600"> PACKAGING</span>
                 </span>
-                <span className="bg-amber-100 text-amber-800 text-[10px] font-extrabold px-1.5 py-0.5 rounded tracking-wider uppercase">
-                  EST. 1989
-                </span>
               </div>
-              <p className="text-[11px] text-slate-500 font-medium tracking-wide">
-                Krishna Packaging Co. & Shubham Industries • Jaipur
-              </p>
             </div>
           </div>
 
