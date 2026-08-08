@@ -7,6 +7,7 @@ export async function POST(request: Request) {
     const { name, phone, email, company, boxSpec, quantity, details, location } = body;
 
     const targetEmails = [
+      "sunnykulshrestha2000@gmail.com",
       "krishnapackagingcompany@gmail.com",
       "shubhamindustries124@gmail.com",
     ];
