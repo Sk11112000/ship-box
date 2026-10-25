@@ -114,8 +114,12 @@ export default function BoxCalculator({ onOpenQuoteModal }: BoxCalculatorProps) 
             Calculate Your <span className="text-amber-700">Cardboard Box Cost</span> & Weight Capacity
           </h2>
           <p className="mt-3 text-slate-600 text-base">
-            Get instant wholesale estimates for custom corrugated boxes manufactured in our Jaipur factory. Select dimensions, fluting, paper GSM & order volume below.
+            Get instant wholesale estimates for custom corrugated boxes manufactured in our Transport Nagar, Jaipur factory. Select dimensions, fluting, paper GSM & order volume below.
           </p>
+          <div className="mt-4 inline-flex items-center gap-2 bg-amber-100 border border-amber-300 text-amber-900 px-3.5 py-1.5 rounded-xl text-xs font-bold">
+            <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
+            <span>Pricing & MOQ: According to the size and custom packaging requirements.</span>
+          </div>
         </div>
 
         {/* Estimator Card Grid */}
@@ -331,7 +335,7 @@ export default function BoxCalculator({ onOpenQuoteModal }: BoxCalculatorProps) 
                   <Sparkles className="w-4 h-4" /> Live Factory Estimate
                 </span>
                 <span className="text-[11px] bg-slate-800 text-slate-300 font-semibold px-2.5 py-1 rounded-full border border-slate-700">
-                  VKI Jaipur Dispatch
+                  Transport Nagar Jaipur Dispatch
                 </span>
               </div>
 
@@ -369,24 +373,24 @@ export default function BoxCalculator({ onOpenQuoteModal }: BoxCalculatorProps) 
               <div className="space-y-2 pt-2 border-t border-slate-800 text-xs text-slate-300 font-medium">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>Pricing & MOQ According to Dimensions & Fluting</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span>Free Box Sample Dispatch in Jaipur within 24 Hours</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span>GST Invoice Available (18% GST Applicable)</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Custom Die Cut & Print Plate Setup Discount</span>
-                </div>
               </div>
 
               {/* Action Button */}
               <button
                 onClick={handleRequestQuoteWithSpecs}
-                className="w-full mt-6 py-4 px-6 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-black text-sm shadow-xl shadow-amber-600/30 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5"
+                className="w-full mt-6 py-4 px-6 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-black text-sm shadow-xl shadow-amber-600/30 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5 cursor-pointer"
               >
-                <span>Lock Estimate & Request Factory Sample</span>
+                <span>Get a Bulk Quote with These Specifications</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

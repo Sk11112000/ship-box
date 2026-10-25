@@ -9,7 +9,7 @@ export default function Testimonials() {
       role: "Managing Director",
       company: "Royal Blue Pottery & Crafts",
       location: "Sanganer, Jaipur",
-      content: "ShipBox Jaipur customized 5-ply partitioned cartons for our export pottery. Zero transit breakage in over 40 sea containers shipped to USA and EU. Highly dependable team!",
+      content: "Krishna Packaging Company customized 5-ply partitioned cartons for our export pottery. Zero transit breakage in over 40 sea containers shipped to USA and EU. Highly dependable team!",
       rating: 5,
     },
     {
@@ -23,9 +23,9 @@ export default function Testimonials() {
     {
       name: "Vikramjit Singh",
       role: "Operations Manager",
-      company: "VKI Auto Parts Mfg Pvt Ltd",
-      location: "VKI Area Road No. 9, Jaipur",
-      content: "Switched from expensive wooden crates to ShipBox's 7-ply heavy-duty cardboard boxes. Saved 30% on transport freight costs and eliminated ISPM wood fumigation headaches.",
+      company: "Transport Nagar Auto Spares Mfg Pvt Ltd",
+      location: "Transport Nagar Delhi Road, Jaipur",
+      content: "Switched from expensive wooden crates to Krishna Packaging's 7-ply heavy-duty cardboard boxes. Saved 30% on transport freight costs and eliminated ISPM wood fumigation headaches.",
       rating: 5,
     },
   ];
@@ -43,7 +43,7 @@ export default function Testimonials() {
             Trusted by <span className="text-amber-700">1,200+ Jaipur Exporters</span> & Manufacturers
           </h2>
           <p className="mt-3 text-slate-600 text-base">
-            Here is what business owners across Vishwakarma, Sitapura, Mansarovar, and Heritage Jaipur say about ShipBox Packaging.
+            Here is what business owners across Transport Nagar, Sitapura, Mansarovar, and Heritage Jaipur say about Krishna Packaging Company.
           </p>
         </div>
 
@@ -104,8 +104,8 @@ export default function Testimonials() {
           <div className="flex items-center gap-3">
             <MapPin className="w-8 h-8 text-amber-600" />
             <div className="text-left">
-              <p className="text-xs font-black text-slate-900 uppercase">VKI Jaipur Industrial Unit</p>
-              <p className="text-[11px] text-slate-500">Road No. 9, Vishwakarma Area</p>
+              <p className="text-xs font-black text-slate-900 uppercase">Transport Nagar Factory Unit</p>
+              <p className="text-[11px] text-slate-500">Nagtali, Transport Nagar, Delhi Road, Jaipur - 302004</p>
             </div>
           </div>
         </div>

@@ -34,10 +34,10 @@ export default function JaipurSpecialty({ onOpenQuoteModal }: JaipurSpecialtyPro
     },
     {
       icon: Anchor,
-      title: "VKI Industrial Machinery & Auto Parts",
-      tagline: "Heavy-Duty Pallet Cartons (7-Ply)",
-      description: "Heavy structural triple-wall 7-ply corrugated containers replacing expensive wooden crates for auto component exporters and heavy industrial machinery.",
-      location: "Vishwakarma (VKI) • Sitapura • Jhotwara",
+      title: "Transport Nagar & Industrial Machinery Spares",
+      tagline: "Heavy-Duty Pallet Cartons (7-Ply & 9-Ply)",
+      description: "Heavy structural triple-wall 7-ply and 9-ply corrugated containers replacing expensive wooden crates for auto component exporters and heavy industrial machinery.",
+      location: "Transport Nagar • Sitapura • Jhotwara • Jaipur NCR",
       specs: ["100+ kg Load Rating", "ISPM-15 Exempt (No Wood)", "Cost Reduction vs Crates"],
     },
     {
@@ -45,7 +45,7 @@ export default function JaipurSpecialty({ onOpenQuoteModal }: JaipurSpecialtyPro
       title: "Jaipur E-Commerce Sellers & D2C Brands",
       tagline: "Fast 24-Hour Factory Dispatch",
       description: "Amazon, Flipkart & Shopify standard corrugated mailer boxes stored ready in stock for instant same-day pickup or delivery across Jaipur pin codes.",
-      location: "Mansarovar • Transport Nagar • Jaipur NCR",
+      location: "Transport Nagar • Mansarovar • Jaipur NCR",
       specs: ["Pre-Cut In Stock", "Same-Day Delivery", "Wholesale Tier Pricing"],
     },
   ];
@@ -63,7 +63,7 @@ export default function JaipurSpecialty({ onOpenQuoteModal }: JaipurSpecialtyPro
             Specialized Packaging for <span className="text-amber-700">Jaipur&apos;s Heritage Industries</span>
           </h2>
           <p className="mt-3 text-slate-600 text-base">
-            For over 18 years, our VKI factory has engineered specialized cardboard solutions tailored to Rajasthan&apos;s leading handicraft, textile, jewellery, and industrial exporters.
+            For over 37 years, our Transport Nagar factory has engineered specialized corrugated cardboard solutions tailored to Rajasthan&apos;s leading handicraft, textile, jewellery, and industrial exporters.
           </p>
         </div>
 
@@ -111,10 +111,10 @@ export default function JaipurSpecialty({ onOpenQuoteModal }: JaipurSpecialtyPro
 
                 <div className="pt-6">
                   <button
-                    onClick={() => onOpenQuoteModal(`Jaipur Industry Box: ${ind.title}`)}
-                    className="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-amber-600 text-slate-800 hover:text-white font-bold text-xs flex items-center justify-center gap-2 transition-all"
+                    onClick={() => onOpenQuoteModal(`Get a Bulk Quote: ${ind.title}`)}
+                    className="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-amber-600 text-slate-800 hover:text-white font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer"
                   >
-                    <span>Request Industry Spec Sheet</span>
+                    <span>Get a Bulk Quote for This Spec</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>

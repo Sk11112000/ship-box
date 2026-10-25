@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Package, Shield, CheckCircle, ArrowUpRight, Sparkles, Layers, Scissors, Printer, ShieldAlert, Scroll, FileText } from "lucide-react";
+import { Package, Shield, CheckCircle, ArrowUpRight, Sparkles, Layers, Scissors, Printer, ShieldAlert, Scroll, FileText, CheckCircle2 } from "lucide-react";
 
 interface ProductsSectionProps {
   onOpenQuoteModal: (boxType: string) => void;
@@ -25,61 +25,61 @@ interface Product {
 }
 
 const PRODUCTS: Product[] = [
-  // Multi-Layer Corrugated Boxes
+  // 1. Multi-Layer Corrugated Boxes
   {
     id: "3ply-box",
     category: "multilayer",
     title: "3-Ply Corrugated Boxes",
     subtitle: "Lightweight & Reliable Everyday Shipping Cartons",
-    tag: "Standard Shipping",
+    tag: "High Demand",
     specs: {
       ply: "3-Ply Single Wall",
       flute: "B-Flute / C-Flute / E-Flute",
       burstingFactor: "16 to 22 BF",
-      idealFor: "E-commerce shipments, retail goods, apparel & light products",
+      idealFor: "E-commerce shipments, retail goods, apparel & light to medium products",
     },
     features: [
-      "Cost-effective everyday packing for online store dispatch",
-      "Precision cut for easy folding and fast taping",
-      "Available in brown kraft or bleached white top",
+      "Shock-absorbent for fragile items with moisture-resistant kraft paper",
+      "Crush-proof & reliable for courier transit and domestic shipping",
+      "Available in standard kraft brown and bleached white top",
     ],
-    image: "/images/cardboard_factory_hero.png",
+    image: "/images/krishna_3ply_strength.jpg",
   },
   {
     id: "5ply-box",
     category: "multilayer",
     title: "5-Ply Corrugated Boxes",
-    subtitle: "Double Wall Strong Shipping Master Cartons",
-    tag: "High Demand",
+    subtitle: "Double Wall Strong Shipping Master Cartons (140 GSM Virgin Paper)",
+    tag: "Export Grade",
     specs: {
       ply: "5-Ply Double Wall",
       flute: "BC-Flute / AB-Flute",
       burstingFactor: "22 to 32 BF",
-      idealFor: "Handicrafts, electronics, garments & domestic freight",
+      idealFor: "Handicrafts, ceramics, blue pottery, garments & domestic/export freight",
     },
     features: [
+      "140 GSM virgin paper quality for superior compression strength",
       "Enhanced stacking strength for multi-layer warehouse storage",
-      "Superior protection against transit bumps and drops",
-      "High bursting strength kraft paper liner options",
+      "Superior protection against transit shocks, vibrations and drops",
     ],
-    image: "/images/cardboard_custom_boxes.png",
+    image: "/images/krishna_5ply_box.png",
   },
   {
     id: "7ply-box",
     category: "multilayer",
     title: "7-Ply Corrugated Boxes",
     subtitle: "Triple Wall Heavy-Duty Export Shipping Cartons",
-    tag: "Export Quality",
+    tag: "Heavy Duty",
     specs: {
       ply: "7-Ply Triple Wall",
       flute: "BCA Flute Combination",
       burstingFactor: "32 to 45 BF",
-      idealFor: "Heavy machinery, stone pottery, export shipping & bulk cargo",
+      idealFor: "Heavy machinery, stone crafts, bulk auto components & ocean sea freight",
     },
     features: [
-      "Replaces wooden crates for export shipments",
-      "High vertical compression rating for heavy ocean freight",
-      "Protects against severe handling and international transit",
+      "Replaces heavy wooden crates with zero ISPM fumigation compliance",
+      "High vertical compression rating for severe multi-ton stacking",
+      "Engineered to withstand long ocean cargo transit and rough handling",
     ],
     image: "/images/cardboard_factory_hero.png",
   },
@@ -88,19 +88,19 @@ const PRODUCTS: Product[] = [
     category: "multilayer",
     title: "9-Ply Heavy-Duty Boxes",
     subtitle: "Multi-Wall High Load Capacity Industrial Cartons",
-    tag: "Heavy Load",
+    tag: "Industrial Grade",
     specs: {
       ply: "9-Ply Quad Wall",
-      flute: "Heavy Flute Composite",
+      flute: "Heavy Flute Composite Matrix",
       burstingFactor: "45+ BF",
-      idealFor: "Auto components, industrial equipment & bulk export",
+      idealFor: "Heavy industrial machinery, engines, metal components & bulk export",
     },
     features: [
-      "Extreme structural rigidity without warping",
-      "Absorbs heavy vibrations and high impact forces",
-      "Custom manufactured for severe industrial transport",
+      "Extreme structural rigidity without warping under extreme weight",
+      "Absorbs heavy vibrations and high road impact forces",
+      "Custom manufactured for severe industrial transport environments",
     ],
-    image: "/images/cardboard_custom_boxes.png",
+    image: "/images/krishna_plant_machinery.png",
   },
   {
     id: "11ply-box",
@@ -110,38 +110,38 @@ const PRODUCTS: Product[] = [
     tag: "Extra Strong",
     specs: {
       ply: "11-Ply Multi-Wall",
-      flute: "Dense Heavy Fluting",
+      flute: "Dense Multi-Flute Combination",
       burstingFactor: "50+ BF",
-      idealFor: "Heavy machinery spares, metal castings & raw materials",
+      idealFor: "Heavy machinery spares, metal castings, tooling & export bulk loads",
     },
     features: [
-      "Designed for extreme weight bearing and stacking",
-      "Ideal for sea container bulk cargo shipping",
-      "Moisture-resistant kraft construction options",
+      "Engineered for extreme weight-bearing capacity up to 450+ kg",
+      "Optimal for containerized sea shipment and rail bulk freight",
+      "Moisture-resistant kraft construction for tropical shipping",
     ],
-    image: "/images/cardboard_factory_hero.png",
+    image: "/images/cardboard_custom_boxes.png",
   },
   {
     id: "13ply-box",
     category: "multilayer",
     title: "13-Ply Ultra Heavy-Duty Industrial Boxes",
-    subtitle: "Maximum Strength Corrugated Crates",
+    subtitle: "Maximum Strength Corrugated Heavy-Duty Crates",
     tag: "Ultra Heavy Duty",
     specs: {
       ply: "13-Ply Ultra Multi-Wall",
       flute: "Max Flute Matrix",
-      burstingFactor: "60+ BF Industrial Grade",
-      idealFor: "Ultra-heavy machinery, engine blocks & heavy export cargo",
+      burstingFactor: "60+ Industrial BF",
+      idealFor: "Ultra-heavy machinery, generator units & massive industrial exports",
     },
     features: [
-      "Maximum crush resistance available in corrugated technology",
-      "Eco-friendly alternative to heavy timber / wooden crates",
-      "Custom engineered to exact weight specifications",
+      "Maximum crush resistance available in modern corrugated engineering",
+      "Eco-friendly, lightweight alternative to timber and plywood crates",
+      "Custom engineered to exact product weight, balance and load requirements",
     ],
-    image: "/images/cardboard_factory_hero.png",
+    image: "/images/krishna_factory_exterior.jpg",
   },
 
-  // Custom & Specialty Packaging
+  // 2. Custom & Specialty Packaging
   {
     id: "custom-die-cut",
     category: "custom",
@@ -152,12 +152,12 @@ const PRODUCTS: Product[] = [
       ply: "3-Ply / 5-Ply Custom",
       flute: "E-Flute / B-Flute / F-Flute",
       burstingFactor: "20 to 28 BF",
-      idealFor: "Custom product shapes, mailer boxes, gift boxes & inserts",
+      idealFor: "Precision product shapes, self-locking mailers, gift boxes & inserts",
     },
     features: [
-      "Precision-cut to exact product contours and dimensions",
-      "Self-locking designs require no adhesive tape",
-      "Enhances unboxing experience and brand value",
+      "Precision-cut packaging tailored to your exact product dimensions and shape",
+      "Self-locking designs require no adhesive tape, giving a premium unboxing experience",
+      "Custom internal cavities and dividers to lock delicate products in place",
     ],
     image: "/images/cardboard_custom_boxes.png",
   },
@@ -168,17 +168,17 @@ const PRODUCTS: Product[] = [
     subtitle: "High-Quality Multi-Color Branding & Retail Displays",
     tag: "Premium Branding",
     specs: {
-      ply: "Micro-Flute + Laminated Board",
-      flute: "E-Flute / F-Flute",
+      ply: "Micro-Flute + Laminated Duplex Board",
+      flute: "E-Flute / F-Flute / B-Flute",
       burstingFactor: "22 to 30 BF",
-      idealFor: "Retail display packaging, cosmetics, luxury goods & consumer electronics",
+      idealFor: "Retail display packaging, cosmetics, luxury goods, textiles & electronics",
     },
     features: [
-      "Vibrant multi-color offset printing with gloss / matte lamination",
-      "High photographic resolution for eye-catching shelf presence",
-      "Custom foil stamping and spot UV options available",
+      "High-quality multi-color printed boxes for premium branding and retail display",
+      "Vibrant color fidelity with gloss/matte lamination, UV coating & embossing",
+      "Transforms standard shipping boxes into eye-catching marketing assets",
     ],
-    image: "/images/cardboard_custom_boxes.png",
+    image: "/images/krishna_5ply_box.png",
   },
   {
     id: "binding-cloth-box",
@@ -188,73 +188,73 @@ const PRODUCTS: Product[] = [
     tag: "Extreme Durability",
     specs: {
       ply: "5-Ply / 7-Ply Cloth Reinforced",
-      flute: "BC-Flute + Fabric Stitch",
+      flute: "BC-Flute + Heavy Cloth Stitch",
       burstingFactor: "35+ BF Fabric Reinforced",
-      idealFor: "Heavy-weight export goods, textile rolls, hardware & harsh handling",
+      idealFor: "Heavy-weight export goods, textile bales, metal hardware & rough transit",
     },
     features: [
-      "Stitched with heavy binding cloth along edges and joints",
-      "Prevents corner tearing under severe transport strain",
-      "Extremely popular for long-distance export and heavy loads",
+      "Extra-reinforced boxes stitched with binding cloth along edges and joints",
+      "Provides extreme durability against burst strains, corner tear and drop shock",
+      "Highly recommended for heavy export cargo and multi-handling transport",
     ],
-    image: "/images/cardboard_factory_hero.png",
+    image: "/images/krishna_plant_machinery.png",
   },
 
-  // Packaging Materials & Supplies
+  // 3. Packaging Materials & Supplies
   {
     id: "corrugated-rolls",
     category: "supplies",
-    title: "Corrugated Kraft Rolls",
+    title: "Corrugated Rolls",
     subtitle: "Flexible & Shock-Absorbent Wrapping Rolls",
     tag: "Wrapping Material",
     specs: {
       ply: "2-Ply Single Face Flute",
       flute: "C-Flute / B-Flute",
       burstingFactor: "16 to 20 BF",
-      idealFor: "Wrapping furniture, glass, metal pipes & irregular items",
+      idealFor: "Wrapping furniture, glass, metal tubes, ceramic crafts & irregular shapes",
     },
     features: [
-      "Flexible shock-absorbing cushion for surface protection",
-      "Available in standard roll widths from 24 to 72 inches",
-      "100% recyclable and eco-friendly packaging material",
+      "Flexible and shock-absorbent rolls for wrapping irregular-shaped items safely",
+      "Available in roll widths from 24 inches to 72 inches in continuous lengths",
+      "100% recyclable, biodegradable cushioning alternative to plastic bubble wrap",
     ],
-    image: "/images/cardboard_factory_hero.png",
+    image: "/images/krishna_3ply_strength.jpg",
   },
   {
     id: "corrugated-sheets",
     category: "supplies",
-    title: "Corrugated Sheets & Layer Pads",
-    subtitle: "Sturdy Flat Partition & Support Sheets",
+    title: "Corrugated Sheets",
+    subtitle: "Sturdy Flat Partition & Layer Support Sheets",
     tag: "Structural Support",
     specs: {
-      ply: "3-Ply / 5-Ply / 7-Ply Flat Sheets",
+      ply: "3-Ply / 5-Ply / 7-Ply Flat Board",
       flute: "B / C / BC Flutes",
-      burstingFactor: "18 to 32 BF",
-      idealFor: "Pallet layer pads, box partitions, separator sheets & floor protection",
+      burstingFactor: "18 to 35 BF",
+      idealFor: "Pallet layer pads, box partitions, separator sheets & structural support",
     },
     features: [
-      "Provides uniform load distribution on pallets",
-      "Custom die-cut grid partitions for fragile items",
-      "High rigidity for stacking stability",
+      "Sturdy flat sheets used for partitions, layer pads, and structural support inside boxes",
+      "Custom sized to fit inside cartons or on standard wooden/plastic export pallets",
+      "Provides uniform load distribution to prevent carton crushing in tall stacks",
     ],
-    image: "/images/cardboard_custom_boxes.png",
+    image: "/images/krishna_3ply_structure.jpg",
   },
   {
     id: "kraft-paper",
     category: "supplies",
-    title: "High-Strength Kraft Paper",
-    subtitle: "Premium Grade Packaging & Wrapping Paper",
+    title: "Kraft Paper",
+    subtitle: "High-Strength Premium Quality Industrial Paper",
     tag: "Raw Material",
     specs: {
-      ply: "Virgin / Recycled Kraft Paper",
-      flute: "Non-corrugated Flat Paper",
-      burstingFactor: "14 to 30 BF (80 to 220 GSM)",
-      idealFor: "Wrapping, void fill, paper bags & laminating",
+      ply: "Virgin / Recycled Kraft Paper Roll & Sheet",
+      flute: "Flat Industrial Kraft Paper",
+      burstingFactor: "16 to 32 BF (80 to 250 GSM)",
+      idealFor: "Industrial packaging, void fill, laminating, paper bags & core wrapping",
     },
     features: [
-      "High tensile strength and tear resistance",
-      "Available in various GSM ratings and roll/sheet sizes",
-      "Sourced from premium mills for high bursting factor",
+      "High-strength, premium quality kraft paper for various industrial applications",
+      "High bursting factor and tensile strength to withstand rough friction and moisture",
+      "Supplied in rolls of varied widths or customized flat cut sheets",
     ],
     image: "/images/cardboard_factory_hero.png",
   },
@@ -277,25 +277,31 @@ export default function ProductsSection({ onOpenQuoteModal }: ProductsSectionPro
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Title */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 bg-amber-500/20 text-amber-300 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3 border border-amber-500/30">
-            <Package className="w-4 h-4 text-amber-400" /> Complete Packaging Range
+            <Package className="w-4 h-4 text-amber-400" /> Complete Range of Corrugated Solutions
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Our Complete <span className="text-amber-400">Corrugated & Cardboard</span> Products
+            Our Complete <span className="text-amber-400">Packaging Products & Raw Materials</span>
           </h2>
-          <p className="mt-3 text-slate-300 text-base">
-            Manufactured in-house at our Jaipur plant to ensure the highest quality standards. From 3-ply to 13-ply ultra heavy-duty boxes, custom die-cut designs, binding cloth reinforcement & packaging materials.
+          <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+            We offer a complete range of corrugated packaging solutions and raw materials, manufactured in-house to ensure the highest quality standards. From lightweight retail packing to ultra-heavy-duty industrial transit, we provide exactly what your business needs.
           </p>
+
+          {/* Pricing & MOQ Notice Banner */}
+          <div className="mt-5 inline-flex items-center gap-2 bg-gradient-to-r from-amber-500/20 via-amber-600/20 to-amber-500/20 border border-amber-500/40 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-amber-300">
+            <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
+            <span>Pricing & Minimum Order Quantity (MOQ): According to the size and specific box requirements.</span>
+          </div>
         </div>
 
         {/* Category Filter Tabs */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
           {[
-            { id: "all", label: "All Products" },
-            { id: "multilayer", label: "Multi-Layer Boxes (3 to 13 Ply)" },
-            { id: "custom", label: "Custom, Offset & Binding Cloth" },
-            { id: "supplies", label: "Rolls, Sheets & Kraft Paper" },
+            { id: "all", label: "All Products (12)" },
+            { id: "multilayer", label: "1. Multi-Layer Boxes (3 to 13 Ply)" },
+            { id: "custom", label: "2. Custom & Specialty Packaging" },
+            { id: "supplies", label: "3. Packaging Materials & Supplies" },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -320,7 +326,7 @@ export default function ProductsSection({ onOpenQuoteModal }: ProductsSectionPro
             >
               <div>
                 {/* Image Header */}
-                <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-950">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-950">
                   <Image
                     src={prod.image}
                     alt={prod.title}
@@ -374,10 +380,10 @@ export default function ProductsSection({ onOpenQuoteModal }: ProductsSectionPro
               {/* Card Footer Action */}
               <div className="p-6 pt-0">
                 <button
-                  onClick={() => onOpenQuoteModal(prod.title)}
+                  onClick={() => onOpenQuoteModal(`Bulk Quote for ${prod.title}`)}
                   className="w-full py-3 px-4 bg-slate-700/80 hover:bg-amber-500 hover:text-slate-950 text-slate-100 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2 border border-slate-600 hover:border-amber-400 cursor-pointer"
                 >
-                  <span>Request Quote for {prod.title}</span>
+                  <span>Get a Bulk Quote for {prod.title}</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>

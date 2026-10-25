@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import ProductsSection from "@/components/ProductsSection";
 import BoxCalculator from "@/components/BoxCalculator";
 import FactoryCapabilities from "@/components/FactoryCapabilities";
+import PhotoGallery from "@/components/PhotoGallery";
 import JaipurSpecialty from "@/components/JaipurSpecialty";
 import Testimonials from "@/components/Testimonials";
 import ContactSection from "@/components/ContactSection";
@@ -14,7 +15,7 @@ import QuoteModal from "@/components/QuoteModal";
 
 export default function Home() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
-  const [selectedBoxSpec, setSelectedBoxSpec] = useState<string>("3-Ply Custom Corrugated Box");
+  const [selectedBoxSpec, setSelectedBoxSpec] = useState<string>("Bulk Corrugated Box Order");
 
   const handleOpenQuoteModal = (boxSpec?: string) => {
     if (boxSpec) {
@@ -28,7 +29,7 @@ export default function Home() {
   };
 
   const handleOpenCalculator = () => {
-    const el = document.getElementById("box-calculator");
+    const el = document.getElementById("calculator");
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
@@ -51,6 +52,9 @@ export default function Home() {
         onOpenQuoteModal={handleOpenQuoteModal}
       />
       <FactoryCapabilities />
+      <PhotoGallery 
+        onOpenQuoteModal={handleOpenQuoteModal}
+      />
       <JaipurSpecialty 
         onOpenQuoteModal={handleOpenQuoteModal}
       />

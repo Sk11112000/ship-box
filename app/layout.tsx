@@ -13,14 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Krishna Packaging Co. & Shubham Industries | Corrugated Box Manufacturer Jaipur (Est. 1989)",
-  description: "Established in 1989. Leading manufacturer of 3-ply to 13-ply corrugated boxes, custom die-cut packaging, offset printed boxes, binding cloth boxes, corrugated rolls, sheets & kraft paper in Jaipur.",
+  title: "Krishna Packaging Company & Shubham Industries | Corrugated Box Manufacturer Jaipur (Est. 1989)",
+  description: "Established in 1989 (For over 37 years). Leading manufacturer of 3-ply to 13-ply corrugated boxes at Nagtali, Transport Nagar, Delhi Road, Jaipur - 302004. Custom die-cut boxes, offset printed boxes, boxes with binding cloth, corrugated rolls, sheets & kraft paper. Factory hours 9 AM - 8 PM.",
   keywords: [
     "Krishna Packaging Company Jaipur",
     "Shubham Industries Jaipur",
     "Corrugated box manufacturer Jaipur",
     "Cardboard manufacturer Jaipur",
     "Nagtali Transport Nagar Delhi Road Jaipur",
+    "Transport Nagar cardboard factory",
     "Multi-layer 3-ply to 13-ply corrugated boxes",
     "Custom die cut boxes Jaipur",
     "Offset printed boxes Jaipur",

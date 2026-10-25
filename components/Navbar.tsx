@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Package, Phone, Mail, MapPin, Menu, X, ChevronRight, Calculator, ShieldCheck } from "lucide-react";
+import { Package, Phone, Mail, MapPin, Menu, X, ChevronRight, Calculator, ShieldCheck, Clock, Camera } from "lucide-react";
 
 interface NavbarProps {
   onOpenCalculator?: () => void;
@@ -26,12 +26,16 @@ export default function Navbar({ onOpenCalculator, onOpenQuoteModal }: NavbarPro
       <div className="bg-[#1E293B] text-amber-100 text-xs py-2 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-3 flex-wrap justify-center md:justify-start">
-            <span className="inline-flex items-center gap-1.5 bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-semibold text-[11px] border border-amber-500/30">
-              <MapPin className="w-3 h-3 text-amber-400" /> Nagtali, Transport Nagar, Delhi Road, Jaipur
+            <span className="inline-flex items-center gap-1.5 bg-amber-500/20 text-amber-300 px-2.5 py-0.5 rounded font-semibold text-[11px] border border-amber-500/30">
+              <MapPin className="w-3 h-3 text-amber-400" /> Nagtali, Transport Nagar, Delhi Road, Jaipur - 302004
             </span>
-            <span className="hidden sm:inline-block text-slate-400">|</span>
-            <span className="hidden sm:inline flex items-center gap-1 text-slate-300">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> Est. 1989 • 35+ Years Packaging Excellence
+            <span className="hidden sm:inline-block text-slate-500">|</span>
+            <span className="hidden sm:inline-flex items-center gap-1 text-slate-300 text-[11px]">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> Est. 1989 • For Over 37 Years Packaging Excellence
+            </span>
+            <span className="hidden md:inline-block text-slate-500">|</span>
+            <span className="hidden md:inline-flex items-center gap-1 text-amber-300 text-[11px]">
+              <Clock className="w-3 h-3 text-amber-400" /> 9:00 AM - 8:00 PM
             </span>
           </div>
 
@@ -55,7 +59,7 @@ export default function Navbar({ onOpenCalculator, onOpenQuoteModal }: NavbarPro
             <div className="relative w-11 h-11 rounded-xl overflow-hidden shadow-md border border-amber-500/30 shrink-0">
               <Image
                 src="/images/krishna_packaging_logo.png"
-                alt="Krishna Packaging Logo"
+                alt="Krishna Packaging Company Logo"
                 fill
                 className="object-cover"
               />
@@ -66,11 +70,14 @@ export default function Navbar({ onOpenCalculator, onOpenQuoteModal }: NavbarPro
                   KRISHNA<span className="text-amber-600"> PACKAGING</span>
                 </span>
               </div>
+              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                Transport Nagar, Jaipur • Est. 1989
+              </p>
             </div>
           </div>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700">
+          <nav className="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-700">
             <button
               onClick={() => scrollTo("hero")}
               className="hover:text-amber-600 transition-colors cursor-pointer"
@@ -84,6 +91,13 @@ export default function Navbar({ onOpenCalculator, onOpenQuoteModal }: NavbarPro
               Box Types
             </button>
             <button
+              onClick={() => scrollTo("gallery")}
+              className="hover:text-amber-600 transition-colors flex items-center gap-1 cursor-pointer"
+            >
+              <Camera className="w-3.5 h-3.5 text-amber-600" />
+              Photos
+            </button>
+            <button
               onClick={() => scrollTo("jaipur-industries")}
               className="hover:text-amber-600 transition-colors cursor-pointer"
             >
@@ -94,19 +108,19 @@ export default function Navbar({ onOpenCalculator, onOpenQuoteModal }: NavbarPro
               className="hover:text-amber-600 transition-colors flex items-center gap-1 text-amber-700 font-bold bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200 cursor-pointer"
             >
               <Calculator className="w-4 h-4 text-amber-600" />
-              Box Cost Estimator
+              Cost Estimator
             </button>
             <button
               onClick={() => scrollTo("factory-specs")}
               className="hover:text-amber-600 transition-colors cursor-pointer"
             >
-              Factory Specs
+              About Us
             </button>
             <button
               onClick={() => scrollTo("contact")}
               className="hover:text-amber-600 transition-colors cursor-pointer"
             >
-              Jaipur Factory Location
+              Factory Map & Contact
             </button>
           </nav>
 
@@ -117,18 +131,18 @@ export default function Navbar({ onOpenCalculator, onOpenQuoteModal }: NavbarPro
                 if (onOpenCalculator) onOpenCalculator();
                 else scrollTo("calculator");
               }}
-              className="text-xs font-bold text-slate-800 hover:text-amber-700 bg-slate-100 hover:bg-amber-100 px-4 py-2.5 rounded-lg transition-all border border-slate-200"
+              className="text-xs font-bold text-slate-800 hover:text-amber-700 bg-slate-100 hover:bg-amber-100 px-3.5 py-2.5 rounded-lg transition-all border border-slate-200"
             >
-              Calculate Box Cost
+              Calculate Price
             </button>
             <button
               onClick={() => {
-                if (onOpenQuoteModal) onOpenQuoteModal("Custom Corrugated Shipping Box");
+                if (onOpenQuoteModal) onOpenQuoteModal("Bulk Corrugated Box Order");
                 else scrollTo("contact");
               }}
-              className="text-xs font-bold text-white bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 px-4 py-2.5 rounded-lg transition-all shadow-md shadow-amber-600/20 flex items-center gap-1.5"
+              className="text-xs font-black text-white bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 px-4 py-2.5 rounded-lg transition-all shadow-md shadow-amber-600/25 flex items-center gap-1.5"
             >
-              Request Quote <ChevronRight className="w-3.5 h-3.5" />
+              Get a Bulk Quote <ChevronRight className="w-3.5 h-3.5" />
             </button>
           </div>
 
@@ -159,7 +173,14 @@ export default function Navbar({ onOpenCalculator, onOpenQuoteModal }: NavbarPro
               onClick={() => scrollTo("products")}
               className="text-left px-3 py-2 rounded-md hover:bg-amber-50 hover:text-amber-700"
             >
-              Corrugated Box Types
+              Corrugated Box Types (3 to 13 Ply)
+            </button>
+            <button
+              onClick={() => scrollTo("gallery")}
+              className="text-left px-3 py-2 rounded-md hover:bg-amber-50 hover:text-amber-700 flex items-center gap-2 font-bold text-amber-800"
+            >
+              <Camera className="w-4 h-4 text-amber-600" />
+              Factory & Box Photos
             </button>
             <button
               onClick={() => scrollTo("jaipur-industries")}
@@ -172,19 +193,19 @@ export default function Navbar({ onOpenCalculator, onOpenQuoteModal }: NavbarPro
               className="text-left px-3 py-2 rounded-md bg-amber-50 text-amber-800 flex items-center gap-2 font-bold"
             >
               <Calculator className="w-4 h-4 text-amber-600" />
-              Box Cost & Weight Estimator
+              Box Cost Estimator (Live Pricing)
             </button>
             <button
               onClick={() => scrollTo("factory-specs")}
               className="text-left px-3 py-2 rounded-md hover:bg-amber-50 hover:text-amber-700"
             >
-              Factory Infrastructure & Specs
+              About Krishna Packaging (Est. 1989)
             </button>
             <button
               onClick={() => scrollTo("contact")}
               className="text-left px-3 py-2 rounded-md hover:bg-amber-50 hover:text-amber-700"
             >
-              Contact Factory (VKI Jaipur)
+              Contact Factory (Transport Nagar Jaipur)
             </button>
           </div>
 
@@ -192,12 +213,12 @@ export default function Navbar({ onOpenCalculator, onOpenQuoteModal }: NavbarPro
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                if (onOpenQuoteModal) onOpenQuoteModal();
+                if (onOpenQuoteModal) onOpenQuoteModal("Bulk Corrugated Box Order");
                 else scrollTo("contact");
               }}
-              className="w-full text-center text-xs font-bold text-white bg-amber-600 hover:bg-amber-700 py-3 rounded-lg shadow-md"
+              className="w-full text-center text-xs font-black text-white bg-amber-600 hover:bg-amber-700 py-3 rounded-lg shadow-md"
             >
-              Request Wholesale Quote
+              Get a Bulk Quote
             </button>
           </div>
         </div>

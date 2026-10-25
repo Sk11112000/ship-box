@@ -75,13 +75,13 @@ export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps
             Connect With Our <span className="text-amber-400">Jaipur Packaging Team</span>
           </h2>
           <p className="mt-3 text-slate-300 text-base">
-            Visit our corrugation plant in Vishwakarma (VKI Area) Jaipur or request an instant wholesale quote below. Factory samples dispatched within 24 hours.
+            Visit our corrugation plant in Nagtali, Transport Nagar, Delhi Road, Jaipur - 302004 or request an instant bulk quote below. Factory samples dispatched within 24 hours.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
 
-          {/* Left Contact Info & Map Card */}
+          {/* Left Contact Info & Interactive Map Card */}
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-slate-800/90 p-7 rounded-2xl border border-slate-700 space-y-6 shadow-xl">
               <h3 className="text-xl font-bold text-white pb-3 border-b border-slate-700 flex items-center gap-2">
@@ -107,9 +107,11 @@ export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-white uppercase tracking-wider">Orders & Enquiries</h4>
+                    <h4 className="font-extrabold text-white uppercase tracking-wider">For Orders & Enquiries</h4>
                     <p className="text-slate-300 mt-0.5 space-y-1">
-                      <span>📞 <strong>Orders & WhatsApp:</strong> <a href="https://wa.me/917891013141" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:underline font-bold">+91 78910 13141</a></span><br />
+                      <span>📞 <strong>Phone & WhatsApp:</strong> <a href="https://wa.me/917891013141" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:underline font-bold">+91 78910 13141</a></span><br />
+                      <span className="text-[11px] text-slate-400">(Feel free to call or drop a message on WhatsApp for bulk orders, pricing, and general queries.)</span><br />
+                      <span className="font-semibold text-slate-200">Key Management Contacts:</span><br />
                       <span>👤 <strong>Krishna Gopal Sharma:</strong> <a href="tel:+919314519097" className="text-amber-300 hover:underline font-bold">+91 93145 19097</a></span><br />
                       <span>👤 <strong>Aniket Sharma:</strong> <a href="tel:+919829088124" className="text-amber-300 hover:underline font-bold">+91 98290 88124</a></span><br />
                       <span>☎️ <strong>Landlines:</strong> <a href="tel:+911412610708" className="text-amber-300 hover:underline">+91 141 2610708</a>, <a href="tel:+911412616412" className="text-amber-300 hover:underline">+91 141 2616412</a></span>
@@ -137,13 +139,47 @@ export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps
                   <div>
                     <h4 className="font-extrabold text-white uppercase tracking-wider">Factory Operating Hours</h4>
                     <p className="text-slate-300 mt-0.5">
-                      Monday - Saturday: 8:30 AM - 7:30 PM<br />
-                      <span className="text-amber-400 font-semibold">Factory & Office Visits Welcome</span>
+                      Monday - Saturday: <strong>9:00 AM - 8:00 PM</strong><br />
+                      <span className="text-amber-400 font-semibold">Factory & Office Visits Welcome (9:00 AM - 8:00 PM)</span>
                     </p>
                   </div>
                 </div>
               </div>
 
+            </div>
+
+            {/* Interactive Google Map Embed */}
+            <div className="bg-slate-800/90 p-5 rounded-2xl border border-slate-700 shadow-xl space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-amber-400" />
+                  <h4 className="font-extrabold text-white text-sm">Interactive Google Map</h4>
+                </div>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Nagtali+Transport+nagar+Delhi+road+Jaipur-302004"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-bold text-amber-400 hover:text-amber-300 underline flex items-center gap-1"
+                >
+                  Open in Google Maps &rarr;
+                </a>
+              </div>
+              <div className="w-full h-64 sm:h-72 rounded-xl overflow-hidden border border-slate-700 relative bg-slate-950">
+                <iframe
+                  src="https://maps.google.com/maps?q=Nagtali%20Transport%20nagar%20Delhi%20road%20Jaipur%20302004&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Krishna Packaging Company Factory Location - Nagtali Transport Nagar Delhi Road Jaipur"
+                  className="w-full h-full"
+                />
+              </div>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                📍 <strong>Factory Address:</strong> Nagtali Transport Nagar Delhi Road, Jaipur - 302004. Easy access via Delhi-Jaipur Highway with wide trailer truck parking.
+              </p>
             </div>
 
             {/* Quick Transport Directions */}
@@ -152,7 +188,7 @@ export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps
                 <Factory className="w-4 h-4" /> Transport & Logistics Reach
               </h4>
               <p className="leading-relaxed text-slate-300">
-                Direct fleet & cargo delivery from Delhi Bypass Road / Transport Nagar plant to Janta Colony, Sitapura, VKIA, Sanganer, Bagru, Jhotwara & all Rajasthan export hubs.
+                Direct fleet & cargo delivery from Delhi Road / Transport Nagar plant to Janta Colony, Sitapura, Mansarovar, Sanganer, Bagru, Jhotwara & all Rajasthan export hubs.
               </p>
             </div>
           </div>
@@ -179,12 +215,15 @@ export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                  <h3 className="text-lg font-extrabold text-slate-900 flex items-center gap-2">
-                    <MessageSquare className="w-5 h-5 text-amber-600" />
-                    Request Wholesale Quotation & Sample Kit
-                  </h3>
-                  <span className="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded uppercase">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-100">
+                  <div>
+                    <h3 className="text-lg font-black text-slate-900 flex items-center gap-2">
+                      <MessageSquare className="w-5 h-5 text-amber-600" />
+                      Get a Bulk Quote & Factory Sample Kit
+                    </h3>
+                    <p className="text-[11px] text-slate-500 font-medium">Pricing & MOQ are calculated according to the box size and specifications.</p>
+                  </div>
+                  <span className="text-[10px] font-bold bg-amber-100 text-amber-800 px-2.5 py-1 rounded-md uppercase self-start sm:self-center whitespace-nowrap">
                     Free Jaipur Sample
                   </span>
                 </div>
@@ -310,7 +349,7 @@ export default function ContactSection({ prefilledBoxSpec }: ContactSectionProps
                   ) : (
                     <>
                       <Send className="w-4 h-4" />
-                      Submit Inquiry & Send Quote Email
+                      Get a Bulk Quote & Send Inquiry
                     </>
                   )}
                 </button>
